@@ -1,4 +1,4 @@
-import { cloneArray } from '../util/';
+import { cloneArray, range } from '../util';
 import { ISort } from './sort';
 
 export class QuickSort<T> implements ISort<T> {
@@ -8,7 +8,7 @@ export class QuickSort<T> implements ISort<T> {
     let didSwap;
     do {
       didSwap = false;
-      for (let i = 1; i < sorted.length; i++) {
+      for (const i of range(1, sorted.length)) {
         if (comparator(sorted[i - 1], sorted[i]) > 0) {
           this.swap(sorted, i - 1, i);
           didSwap = true;
