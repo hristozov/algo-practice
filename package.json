@@ -1,0 +1,23 @@
+{
+  "name": "algo-practice",
+  "version": "0.0.1",
+  "description": "Algorithm implementations",
+  "main": "index.js",
+  "repository": "https://github.com/hristozov/algo-practice",
+  "author": "Georgi Hristozov <georgi@forkbomb.nl>",
+  "license": "Unlicense",
+  "devDependencies": {
+    "@types/chai": "^4.0.1",
+    "@types/mocha": "^2.2.41",
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2",
+    "ts-node": "^3.2.0",
+    "tslint": "^5.5.0",
+    "typescript": "^2.4.1"
+  },
+  "scripts": {
+    "lint": "tslint -c tslint.json src/**/*.ts",
+    "test": "mocha -r ts-node/register \"src/**/*.spec.ts\""
+  },
+  "dependencies": {}
+}
