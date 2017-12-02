@@ -1,20 +1,19 @@
+import { BaseBinaryTree } from './binary-tree';
+import { BinaryTreeNode, IBinaryTreeNode } from './binary-tree-node';
 import { ITree } from './tree';
-import { ITreeNode, TreeNode } from './treeNode';
 
-export class BinarySearchTree<T> implements ITree<T> {
-  private root: ITreeNode<T> | null;
-
+export class BinarySearchTree<T> extends BaseBinaryTree<T> implements ITree<T> {
   constructor(private comparator: (x: T, y: T) => number) {
-    this.root = null;
+    super();
   }
 
   public add(value: T): BinarySearchTree<T> {
     if (!this.root) {
-      this.root = new TreeNode(value);
+      this.root = new BinaryTreeNode(value);
       return this;
     }
 
-    const addToTree = (currentNode: ITreeNode<T>) => {
+    const addToTree = (currentNode: IBinaryTreeNode<T>) => {
       const comparisonResult: number = this.comparator(value, currentNode.value);
       const left = currentNode.left;
       const right = currentNode.right;
@@ -28,13 +27,13 @@ export class BinarySearchTree<T> implements ITree<T> {
         if (left) {
           addToTree(left);
         } else {
-          currentNode.left = new TreeNode(value);
+          currentNode.left = new BinaryTreeNode(value);
         }
       } else {
         if (right) {
           addToTree(right);
         } else {
-          currentNode.right = new TreeNode(value);
+          currentNode.right = new BinaryTreeNode(value);
         }
       }
     };
@@ -52,8 +51,8 @@ export class BinarySearchTree<T> implements ITree<T> {
     return !!this.findNode(value);
   }
 
-  private findNode(value: T): ITreeNode<T> | null {
-    const traverse = (currentNode: ITreeNode<T> | null): ITreeNode<T> | null => {
+  private findNode(value: T): IBinaryTreeNode<T> | null {
+    const traverse = (currentNode: IBinaryTreeNode<T> | null): IBinaryTreeNode<T> | null => {
       if (!currentNode) {
         return null;
       }

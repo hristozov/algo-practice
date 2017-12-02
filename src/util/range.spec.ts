@@ -1,17 +1,10 @@
 import { expect } from 'chai';
 import { range } from './range';
+import { toArray } from './toArray';
 
 /* tslint:disable:no-unused-expression */
 
 describe('range', () => {
-  function toArray<T>(iterator: IterableIterator<T>): T[] {
-    const result = [];
-    for (const x of iterator) {
-      result.push(x);
-    }
-    return result;
-  }
-
   it('produces proper ranges', () => {
     expect(toArray(range(1, 10))).to.deep.equal([1, 2, 3, 4, 5, 6, 7, 8, 9]);
   });
