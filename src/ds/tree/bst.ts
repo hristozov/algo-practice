@@ -51,6 +51,14 @@ export class BinarySearchTree<T> extends BaseBinaryTree<T> implements ITree<T> {
     return !!this.findNode(value);
   }
 
+  public ascending(): T[] {
+    return this.inOrder();
+  }
+
+  public descending(): T[] {
+    return this.inOrder().reverse();
+  }
+
   private findNode(value: T): IBinaryTreeNode<T> | null {
     const traverse = (currentNode: IBinaryTreeNode<T> | null): IBinaryTreeNode<T> | null => {
       if (!currentNode) {
