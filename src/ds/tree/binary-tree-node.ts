@@ -10,7 +10,7 @@ export class BinaryTreeNode<T> implements IBinaryTreeNode<T> {
   public left: IBinaryTreeNode<T>;
   public right: IBinaryTreeNode<T>;
 
-  constructor(public value: T, public parent: IBinaryTreeNode<T> | null = null) {
+  public constructor(public value: T, public parent: IBinaryTreeNode<T> | null = null) {
     this.value = value;
   }
 

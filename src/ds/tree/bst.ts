@@ -3,13 +3,14 @@ import { BinaryTreeNode, IBinaryTreeNode } from './binary-tree-node';
 import { ITree } from './tree';
 
 export class BinarySearchTree<T> extends BaseBinaryTree<T> implements ITree<T> {
-  constructor(private comparator: (x: T, y: T) => number) {
+  public constructor(private comparator: (x: T, y: T) => number) {
     super();
   }
 
   public add(value: T): BinarySearchTree<T> {
     if (!this.root) {
       this.root = new BinaryTreeNode(value);
+
       return this;
     }
 
@@ -73,10 +74,12 @@ export class BinarySearchTree<T> extends BaseBinaryTree<T> implements ITree<T> {
   private removeNode(node: IBinaryTreeNode<T>): BinarySearchTree<T> {
     const findInOrderSuccessor = (current: IBinaryTreeNode<T>): IBinaryTreeNode<T> => {
       const leftSuccessor = current.left;
+
       return leftSuccessor ? findInOrderSuccessor(leftSuccessor) : current;
     };
 
     const replace = (target: IBinaryTreeNode<T>, replacement: IBinaryTreeNode<T> | null) => {
+      const parent = target.parent;
       if (this.isRoot(node) || !parent) {
         this.root = replacement;
 
@@ -94,7 +97,6 @@ export class BinarySearchTree<T> extends BaseBinaryTree<T> implements ITree<T> {
 
     const left = node.left;
     const right = node.right;
-    const parent = node.parent;
 
     if (left && right) {
       const successor = findInOrderSuccessor(right);

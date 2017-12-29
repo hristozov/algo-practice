@@ -3,5 +3,6 @@ export function toArray<T>(iterator: IterableIterator<T>): T[] {
   for (const x of iterator) {
     result.push(x);
   }
+
   return result;
 }

@@ -1,19 +1,25 @@
 {
   "defaultSeverity": "error",
   "extends": [
-    "tslint:recommended"
+    "tslint:all"
   ],
   "jsRules": {},
   "rules": {
-    "max-line-length": [
-      true,
-      100
-    ],
-    "quotemark": [
-      true,
-      "single"
-    ],
-    "cyclomatic-complexity": [true, 15]
+    "completed-docs": false,
+    "cyclomatic-complexity": [true, 15],
+    "max-line-length": [true, 100],
+    "member-ordering": [true, {"order": "fields-first"}],
+    "no-implicit-dependencies": false,
+    "no-magic-numbers": false,
+    "no-null-keyword": false,
+    "no-object-literal-type-assertion": false,
+    "no-parameter-properties": false,
+    "no-unsafe-any": false,
+    "only-arrow-functions": false,
+    "strict-boolean-expressions": false,
+    "prefer-function-over-method": false,
+    "quotemark": [true, "single"],
+    "typedef": false
   },
   "rulesDirectory": []
 }

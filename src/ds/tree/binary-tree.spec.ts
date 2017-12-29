@@ -1,11 +1,11 @@
 import { expect } from 'chai';
-import { BaseBinaryTree} from './binary-tree';
+import { BaseBinaryTree } from './binary-tree';
 import { IBinaryTreeNode } from './binary-tree-node';
 
 /* tslint:disable:no-unused-expression */
 
 class TestBinaryTree<T> extends BaseBinaryTree<T> {
-  constructor(root: IBinaryTreeNode<T> | null = null) {
+  public constructor(root: IBinaryTreeNode<T> | null = null) {
     super();
     this.root = root;
   }

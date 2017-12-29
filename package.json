@@ -19,7 +19,7 @@
     "typescript": "^2.4.1"
   },
   "scripts": {
-    "lint": "tslint -c tslint.json src/**/*.ts",
+    "lint": "tslint -p . -c tslint.json",
     "test": "nyc mocha -r ts-node/register \"src/**/*.spec.ts\""
   },
   "nyc": {

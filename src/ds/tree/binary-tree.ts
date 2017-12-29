@@ -44,6 +44,7 @@ export abstract class BaseBinaryTree<T> {
   private doTraversal(generator: TraversalGenerator<T>) {
     const visitor: Visit<T> = function*(current) {
       if (!current) {
+        // tslint:disable-next-line:return-undefined
         return;
       }
 
