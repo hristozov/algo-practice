@@ -3,17 +3,18 @@ import { ITreeNode } from './tree-node';
 export interface IBinaryTreeNode<T> extends ITreeNode<T> {
   left: IBinaryTreeNode<T> | null;
   right: IBinaryTreeNode<T> | null;
+  parent: IBinaryTreeNode<T> | null;
 }
 
 export class BinaryTreeNode<T> implements IBinaryTreeNode<T> {
   public left: IBinaryTreeNode<T>;
   public right: IBinaryTreeNode<T>;
 
-  constructor(public value: T) {
+  constructor(public value: T, public parent: IBinaryTreeNode<T> | null = null) {
     this.value = value;
   }
 
-  public leaf?(): boolean {
+  public isLeaf(): boolean {
     return !this.left && !this.right;
   }
 }

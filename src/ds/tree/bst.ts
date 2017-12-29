@@ -23,17 +23,17 @@ export class BinarySearchTree<T> extends BaseBinaryTree<T> implements ITree<T> {
         return;
       }
 
-      if (comparisonResult < -1) {
+      if (comparisonResult < 0) {
         if (left) {
           addToTree(left);
         } else {
-          currentNode.left = new BinaryTreeNode(value);
+          currentNode.left = new BinaryTreeNode(value, currentNode);
         }
       } else {
         if (right) {
           addToTree(right);
         } else {
-          currentNode.right = new BinaryTreeNode(value);
+          currentNode.right = new BinaryTreeNode(value, currentNode);
         }
       }
     };
@@ -44,7 +44,14 @@ export class BinarySearchTree<T> extends BaseBinaryTree<T> implements ITree<T> {
   }
 
   public remove(value: T): BinarySearchTree<T> {
-    return this;
+    const node = this.findNode(value);
+
+    if (!node) {
+      // No such value.
+      return this;
+    }
+
+    return this.removeNode(node);
   }
 
   public contains(value: T): boolean {
@@ -57,6 +64,48 @@ export class BinarySearchTree<T> extends BaseBinaryTree<T> implements ITree<T> {
 
   public descending(): T[] {
     return this.inOrder().reverse();
+  }
+
+  private isRoot(node: IBinaryTreeNode<T>) {
+    return this.root === node;
+  }
+
+  private removeNode(node: IBinaryTreeNode<T>): BinarySearchTree<T> {
+    const findInOrderSuccessor = (current: IBinaryTreeNode<T>): IBinaryTreeNode<T> => {
+      const leftSuccessor = current.left;
+      return leftSuccessor ? findInOrderSuccessor(leftSuccessor) : current;
+    };
+
+    const replace = (target: IBinaryTreeNode<T>, replacement: IBinaryTreeNode<T> | null) => {
+      if (this.isRoot(node) || !parent) {
+        this.root = replacement;
+
+        if (replacement) {
+          replacement.parent = null;
+        }
+      } else {
+        if (parent.left === node) {
+          parent.left = replacement;
+        } else {
+          parent.right = replacement;
+        }
+      }
+    };
+
+    const left = node.left;
+    const right = node.right;
+    const parent = node.parent;
+
+    if (left && right) {
+      const successor = findInOrderSuccessor(right);
+
+      this.remove(successor.value);
+      node.value = successor.value;
+    } else {
+      replace(node, left || right);
+    }
+
+    return this;
   }
 
   private findNode(value: T): IBinaryTreeNode<T> | null {

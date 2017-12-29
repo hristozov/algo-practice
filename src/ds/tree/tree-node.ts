@@ -1,4 +1,5 @@
 export interface ITreeNode<T> {
   value: T;
-  leaf?(): boolean;
+  parent: ITreeNode<T> | null;
+  isLeaf(): boolean;
 }
