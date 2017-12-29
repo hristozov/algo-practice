@@ -22,6 +22,9 @@
     "lint": "tslint -p . -c tslint.json",
     "test": "nyc mocha -r ts-node/register \"src/**/*.spec.ts\""
   },
+  "engines": {
+    "node": ">=6.0.0"
+  },
   "nyc": {
     "include": [
       "src/**/*.ts",
