@@ -2,7 +2,7 @@ import { toArray } from '../../util/toArray';
 import { IBinaryTreeNode } from './binary-tree-node';
 import { ITree } from './tree';
 
-export interface IBinaryTree<T> extends ITree<T> {
+export interface ITraversibleBinaryTree<T> extends ITree<T> {
   preOrder(): T[];
 
   inOrder(): T[];

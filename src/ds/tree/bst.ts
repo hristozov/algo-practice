@@ -1,8 +1,7 @@
-import { BaseBinaryTree } from './binary-tree';
+import { BaseBinaryTree, ITraversibleBinaryTree } from './binary-tree';
 import { BinaryTreeNode, IBinaryTreeNode } from './binary-tree-node';
-import { ITree } from './tree';
 
-export class BinarySearchTree<T> extends BaseBinaryTree<T> implements ITree<T> {
+export class BinarySearchTree<T> extends BaseBinaryTree<T> implements ITraversibleBinaryTree<T> {
   public constructor(private comparator: (x: T, y: T) => number) {
     super();
   }
