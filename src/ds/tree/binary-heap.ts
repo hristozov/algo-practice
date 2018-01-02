@@ -29,25 +29,12 @@ export class BinaryHeap<T> implements ITree<T> {
     return this;
   }
 
+  public removeFirst(): BinaryHeap<T> {
+    return this.removeByIdx(0);
+  }
+
   public remove(value: T): BinaryHeap<T> {
-    const idx = this.tree.indexOf(value);
-    if (idx < 0) {
-      return this;
-    }
-
-    if (this.tree.length === 1) {
-      this.tree = [];
-
-      return this;
-    }
-
-    const swapIdx = this.tree.length - 1;
-    this.swap(idx, swapIdx);
-    this.tree = this.tree.slice(0, swapIdx);
-
-    this.downHeap();
-
-    return this;
+    return this.removeByIdx(this.tree.indexOf(value));
   }
 
   public contains(value: T): boolean {
@@ -82,6 +69,10 @@ export class BinaryHeap<T> implements ITree<T> {
     return this.tree;
   }
 
+  public isEmpty(): boolean {
+    return this.tree.length === 0;
+  }
+
   public clone(): BinaryHeap<T> {
     const result = new BinaryHeap<T>(this.comparator);
     result.tree = this.tree.slice();
@@ -101,6 +92,26 @@ export class BinaryHeap<T> implements ITree<T> {
     };
 
     helper(this.tree.length - 1);
+  }
+
+  private removeByIdx(idx: number): BinaryHeap<T> {
+    if (idx < 0) {
+      return this;
+    }
+
+    if (this.tree.length <= 1) {
+      this.tree = [];
+
+      return this;
+    }
+
+    const swapIdx = this.tree.length - 1;
+    this.swap(idx, swapIdx);
+    this.tree = this.tree.slice(0, swapIdx);
+
+    this.downHeap();
+
+    return this;
   }
 
   private downHeap(): void {

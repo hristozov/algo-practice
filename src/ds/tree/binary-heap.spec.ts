@@ -270,4 +270,13 @@ describe('BinaryHeap', () => {
       });
     });
   });
+
+  describe('#removeFirst', () => {
+    it('works with an empty heap', () => {
+      const heap = createMinHeap();
+      expect(heap
+        .removeFirst()
+        .toList()).to.eql([]);
+    });
+  });
 });
