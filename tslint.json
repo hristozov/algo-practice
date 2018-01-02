@@ -19,7 +19,8 @@
     "strict-boolean-expressions": false,
     "prefer-function-over-method": false,
     "quotemark": [true, "single"],
-    "typedef": false
+    "typedef": false,
+    "align": [true, "parameters", "statements", "arguments", "members", "elements"]
   },
   "rulesDirectory": []
 }
