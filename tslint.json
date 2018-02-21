@@ -5,10 +5,12 @@
   ],
   "jsRules": {},
   "rules": {
+    "align": [true, "parameters", "statements", "arguments", "members", "elements"],
     "completed-docs": false,
-    "cyclomatic-complexity": [true, 15],
+    "cyclomatic-complexity": [true, 10],
     "max-line-length": [true, 100],
     "member-ordering": [true, {"order": "fields-first"}],
+    "newline-per-chained-call": false,
     "no-implicit-dependencies": false,
     "no-magic-numbers": false,
     "no-null-keyword": false,
@@ -16,11 +18,10 @@
     "no-parameter-properties": false,
     "no-unsafe-any": false,
     "only-arrow-functions": false,
-    "strict-boolean-expressions": false,
     "prefer-function-over-method": false,
     "quotemark": [true, "single"],
-    "typedef": false,
-    "align": [true, "parameters", "statements", "arguments", "members", "elements"]
+    "strict-boolean-expressions": false,
+    "typedef": false
   },
   "rulesDirectory": []
 }

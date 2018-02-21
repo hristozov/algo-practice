@@ -4,9 +4,9 @@ import { toArray } from '../util/toArray';
 type BooleanExpression = (...args: boolean[]) => boolean;
 
 export class DisjunctiveNormalForm {
-  private symbols: string[];
+  private readonly symbols: string[];
 
-  public constructor(private expression: BooleanExpression) {
+  public constructor(private readonly expression: BooleanExpression) {
     this.symbols = this.constructSymbols();
   }
 

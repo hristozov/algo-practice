@@ -3,7 +3,7 @@ import { ITree } from './tree';
 export class BinaryHeap<T> implements ITree<T> {
   private tree: T[] = [];
 
-  public constructor(private comparator: (x: T, y: T) => number) {
+  public constructor(private readonly comparator: (x: T, y: T) => number) {
   }
 
   private static parent(idx: number): number {

@@ -2,7 +2,7 @@ import { BaseBinaryTree, ITraversibleBinaryTree } from './binary-tree';
 import { BinaryTreeNode, IBinaryTreeNode } from './binary-tree-node';
 
 export class BinarySearchTree<T> extends BaseBinaryTree<T> implements ITraversibleBinaryTree<T> {
-  public constructor(private comparator: (x: T, y: T) => number) {
+  public constructor(private readonly comparator: (x: T, y: T) => number) {
     super();
   }
 
@@ -63,7 +63,8 @@ export class BinarySearchTree<T> extends BaseBinaryTree<T> implements ITraversib
   }
 
   public descending(): T[] {
-    return this.inOrder().reverse();
+    return this.inOrder()
+    .reverse();
   }
 
   private isRoot(node: IBinaryTreeNode<T>) {

@@ -7,7 +7,7 @@ interface IListResult<T> {
 }
 
 export class Trie<T> implements IKVTree<string, T> {
-  private children: { [key: string]: Trie<T> } = {};
+  private readonly children: { [key: string]: Trie<T> } = {};
 
   public constructor(private value: T | null = null) {
   }
@@ -22,6 +22,7 @@ export class Trie<T> implements IKVTree<string, T> {
         current.value = value;
 
         if (!value && Object.keys(children).length === 0 && parent && parentKey) {
+          // tslint:disable-next-line:no-dynamic-delete
           delete parent.children[parentKey];
         }
 
