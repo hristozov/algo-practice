@@ -1,8 +1,8 @@
 import { BinarySearchTree } from '../ds/tree/bst';
-import { ISort } from './sort';
+import { Comparator, ISort } from './sort';
 
 export class TreeSort<T> implements ISort<T> {
-  public sort(t: T[], comparator: (el1: T, el2: T) => number): T[] {
+  public sort(t: T[], comparator: Comparator<T>): T[] {
     const tree = t.reduce((res, current) => res.add(current),
                           new BinarySearchTree(comparator));
 

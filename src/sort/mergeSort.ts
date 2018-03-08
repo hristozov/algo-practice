@@ -1,13 +1,13 @@
-import { ISort } from './sort';
+import { Comparator, ISort } from './sort';
 
 export class MergeSort<T> implements ISort<T> {
-  public sort(t: T[], comparator: (el1: T, el2: T) => number): T[] {
+  public sort(t: T[], comparator: Comparator<T>): T[] {
    return  t.map((element) => [element])
             .reduce((res, list) => this.merge(res, list, comparator),
                     []);
   }
 
-  private merge(list1: T[], list2: T[], comparator: (el1: T, el2: T) => number): T[] {
+  private merge(list1: T[], list2: T[], comparator: Comparator<T>): T[] {
     let l1 = list1;
     let l2 = list2;
     const result: T[] = [];

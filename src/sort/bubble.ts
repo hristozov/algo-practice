@@ -1,8 +1,8 @@
 import { cloneArray, range } from '../util';
-import { ISort } from './sort';
+import { Comparator, ISort } from './sort';
 
 export class QuickSort<T> implements ISort<T> {
-  public sort(t: T[], comparator: (x: T, y: T) => number): T[] {
+  public sort(t: T[], comparator: Comparator<T>): T[] {
     const sorted = cloneArray(t);
 
     let didSwap;

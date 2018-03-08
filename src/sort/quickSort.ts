@@ -1,4 +1,4 @@
-import { ISort } from './sort';
+import { Comparator, ISort } from './sort';
 
 interface IPivotSelection<T> {
   pivot: T;
@@ -6,7 +6,7 @@ interface IPivotSelection<T> {
 }
 
 export class QuickSort<T> implements ISort<T> {
-  public sort(t: T[], comparator: (el1: T, el2: T) => number): T[] {
+  public sort(t: T[], comparator: Comparator<T>): T[] {
     if (t.length === 0) {
       return [];
     }

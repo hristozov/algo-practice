@@ -1,8 +1,8 @@
 import { BinaryHeap } from '../ds/tree/binary-heap';
-import { ISort } from './sort';
+import { Comparator, ISort } from './sort';
 
 export class HeapSort<T> implements ISort<T> {
-  public sort(t: T[], comparator: (el1: T, el2: T) => number): T[] {
+  public sort(t: T[], comparator: Comparator<T>): T[] {
     const heap = t.reduce((res, current) => res.add(current),
                           new BinaryHeap(comparator));
 

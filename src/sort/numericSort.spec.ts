@@ -35,7 +35,7 @@ export function numericSort(klass: new () => ISort<number>) {
       .to.be.empty;
   });
 
-  it('sortes arrays with one element', () => {
+  it('sorts arrays with one element', () => {
     expect(sorter.sort([1], ascComparator))
       .to.deep.equal([1]);
   });
