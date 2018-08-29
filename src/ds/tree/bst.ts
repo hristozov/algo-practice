@@ -1,6 +1,6 @@
 import { Comparator } from '../../sort/sort';
-import { BaseBinaryTree, ITraversibleBinaryTree } from './binary-tree';
-import { BinaryTreeNode, IBinaryTreeNode } from './binary-tree-node';
+import { BaseBinaryTree, ITraversibleBinaryTree } from './binaryTree';
+import { BinaryTreeNode, IBinaryTreeNode } from './binaryTreeNode';
 
 export class BinarySearchTree<T> extends BaseBinaryTree<T> implements ITraversibleBinaryTree<T> {
   public constructor(private readonly comparator: Comparator<T>) {

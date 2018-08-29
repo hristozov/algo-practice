@@ -1,5 +1,5 @@
 import { toArray } from '../../util/toArray';
-import { IBinaryTreeNode } from './binary-tree-node';
+import { IBinaryTreeNode } from './binaryTreeNode';
 import { ITree } from './tree';
 
 export interface ITraversibleBinaryTree<T> extends ITree<T> {

@@ -1,4 +1,4 @@
-import { ITreeNode } from './tree-node';
+import { ITreeNode } from './treeNode';
 
 export interface IBinaryTreeNode<T> extends ITreeNode<T> {
   left: IBinaryTreeNode<T> | null;

@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { BinaryTreeNode } from './binary-tree-node';
+import { BinaryTreeNode } from './binaryTreeNode';
 
 describe('BinaryTreeNode', () => {
   describe('#isLead', () => {

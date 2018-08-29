@@ -1,6 +1,6 @@
 import { expect } from 'chai';
-import { BaseBinaryTree } from './binary-tree';
-import { IBinaryTreeNode } from './binary-tree-node';
+import { BaseBinaryTree } from './binaryTree';
+import { IBinaryTreeNode } from './binaryTreeNode';
 
 /* tslint:disable:no-unused-expression */
 
