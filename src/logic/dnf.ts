@@ -1,5 +1,4 @@
-import { range } from '../util/index';
-import { toArray } from '../util/toArray';
+import { range, toArray } from '../util';
 
 type BooleanExpression = (...args: boolean[]) => boolean;
 

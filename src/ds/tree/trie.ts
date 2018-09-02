@@ -1,5 +1,4 @@
-import { merge } from '../../util/merge';
-import { toArray } from '../../util/toArray';
+import { merge, toArray } from '../../util';
 import { IKVTree } from './tree';
 
 interface IListResult<T> {
