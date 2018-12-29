@@ -8,7 +8,7 @@ import { range } from '../util';
 export class RadixSort {
   private static getMax(numbers: number[]): number {
     let maxIdx = 0;
-    for (let idx = 1; idx < numbers.length; idx++) {
+    for (let idx = 1; idx < numbers.length; idx += 1) {
       if (numbers[idx] >= numbers[maxIdx]) {
         maxIdx = idx;
       }
@@ -41,7 +41,7 @@ export class RadixSort {
       // Now, join the buckets for the current iteration.
       currentList = buckets.reduce((result, bucket) => result.concat(bucket), []);
 
-      currentDigitIdx++;
+      currentDigitIdx += 1;
     }
 
     return currentList;
