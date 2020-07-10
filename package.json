@@ -16,7 +16,7 @@
     "source-map-support": "0.5.0",
     "ts-node": "8.10.2",
     "tslint": "6.1.2",
-    "typescript": "3.2.4"
+    "typescript": "3.4.5"
   },
   "scripts": {
     "lint": "tslint -p . -c tslint.json",
