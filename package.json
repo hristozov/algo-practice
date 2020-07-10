@@ -21,7 +21,8 @@
   },
   "scripts": {
     "lint": "tslint -p . -c tslint.json",
-    "test": "nyc mocha -r ts-node/register \"src/**/*.spec.ts\""
+    "test": "nyc mocha -r ts-node/register \"src/**/*.spec.ts\"",
+    "prettier": "prettier -c ."
   },
   "engines": {
     "node": ">=6.0.0"
