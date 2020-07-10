@@ -16,16 +16,4 @@ describe('range', () => {
     expect(b.foo).to.be.undefined;
     expect(b.bar).to.eq(5);
   });
-
-  it('works when the first object is nil', () => {
-    expect(merge(null, {foo: 'bar'})).to.eq(null);
-  });
-
-  it('works when the first object is nil', () => {
-    const a: any = {foo: 1};
-
-    expect(merge(a, null)).to.eq(a);
-
-    expect(a.foo).to.eq(1);
-  });
 });

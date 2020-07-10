@@ -1,8 +1,4 @@
-export function merge<T>(destination: T, source: T) {
-  if (!destination || !source) {
-    return destination;
-  }
-
+export function merge<T extends {}>(destination: T, source: T) {
   // tslint:disable-next-line:no-for-in
   for (const k in source) {
     if (source.hasOwnProperty(k)) {
