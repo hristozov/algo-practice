@@ -1,5 +1,5 @@
-import { identity } from './identity';
+import { identity } from "./identity";
 
 export function cloneArray<T>(input: T[]): T[] {
-    return input.map(identity);
+  return input.map(identity);
 }

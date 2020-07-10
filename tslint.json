@@ -1,15 +1,20 @@
 {
   "defaultSeverity": "error",
-  "extends": [
-    "tslint:all"
-  ],
+  "extends": ["tslint:all"],
   "jsRules": {},
   "rules": {
-    "align": [true, "parameters", "statements", "arguments", "members", "elements"],
+    "align": [
+      true,
+      "parameters",
+      "statements",
+      "arguments",
+      "members",
+      "elements"
+    ],
     "completed-docs": false,
     "cyclomatic-complexity": [true, 10],
     "max-line-length": [true, 100],
-    "member-ordering": [true, {"order": "fields-first"}],
+    "member-ordering": [true, { "order": "fields-first" }],
     "newline-per-chained-call": false,
     "no-implicit-dependencies": false,
     "no-magic-numbers": false,

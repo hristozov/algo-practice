@@ -1,14 +1,13 @@
-import { ITree } from './tree';
+import { ITree } from "./tree";
 
 export class BinaryHeap<T> implements ITree<T> {
   private tree: T[] = [];
 
-  public constructor(private readonly comparator: (x: T, y: T) => number) {
-  }
+  public constructor(private readonly comparator: (x: T, y: T) => number) {}
 
   private static parent(idx: number): number {
     // tslint:disable-next-line:no-bitwise
-    return Math.floor(idx - 1 >> 1);
+    return Math.floor((idx - 1) >> 1);
   }
 
   private static left(idx: number): number {
@@ -122,8 +121,10 @@ export class BinaryHeap<T> implements ITree<T> {
     const helper = (idx: number) => {
       const left = BinaryHeap.left(idx);
       const right = BinaryHeap.right(idx);
-      const invariantKeptLeft = !this.validIdx(left) || this.compare(idx, left) <= 0;
-      const invariantKeptRight = !this.validIdx(right) || this.compare(idx, right) <= 0;
+      const invariantKeptLeft =
+        !this.validIdx(left) || this.compare(idx, left) <= 0;
+      const invariantKeptRight =
+        !this.validIdx(right) || this.compare(idx, right) <= 0;
 
       if (!this.validIdx(idx) || (invariantKeptLeft && invariantKeptRight)) {
         return;

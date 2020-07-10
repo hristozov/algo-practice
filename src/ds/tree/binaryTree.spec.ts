@@ -1,7 +1,7 @@
-import { expect } from 'chai';
+import { expect } from "chai";
 
-import { BaseBinaryTree } from './binaryTree';
-import { IBinaryTreeNode } from './binaryTreeNode';
+import { BaseBinaryTree } from "./binaryTree";
+import { IBinaryTreeNode } from "./binaryTreeNode";
 
 /* tslint:disable:no-unused-expression */
 
@@ -12,7 +12,7 @@ class TestBinaryTree<T> extends BaseBinaryTree<T> {
   }
 }
 
-describe('BaseBinaryTree', () => {
+describe("BaseBinaryTree", () => {
   const SAMPLE_TREE: IBinaryTreeNode<number> = {
     left: {
       left: {
@@ -35,16 +35,16 @@ describe('BaseBinaryTree', () => {
     value: 1,
   } as IBinaryTreeNode<number>;
 
-  describe('inOrder', () => {
+  describe("inOrder", () => {
     function traverse(root: IBinaryTreeNode<number> | null) {
       return new TestBinaryTree(root).inOrder();
     }
 
-    it('works with no elements', () => {
+    it("works with no elements", () => {
       expect(traverse(null)).to.eql([]);
     });
 
-    it('works with one element', () => {
+    it("works with one element", () => {
       const root: IBinaryTreeNode<number> = {
         left: null,
         right: null,
@@ -54,21 +54,21 @@ describe('BaseBinaryTree', () => {
       expect(traverse(root)).to.eql([1]);
     });
 
-    it('works with the simple tree', () => {
+    it("works with the simple tree", () => {
       expect(traverse(SAMPLE_TREE)).to.eql([3, 5, 4, 1, 2, 0, 7]);
     });
   });
 
-  describe('preOrder', () => {
+  describe("preOrder", () => {
     function traverse(root: IBinaryTreeNode<number> | null) {
       return new TestBinaryTree(root).preOrder();
     }
 
-    it('works with no elements', () => {
+    it("works with no elements", () => {
       expect(traverse(null)).to.eql([]);
     });
 
-    it('works with one element', () => {
+    it("works with one element", () => {
       const root: IBinaryTreeNode<number> = {
         left: null,
         right: null,
@@ -78,21 +78,21 @@ describe('BaseBinaryTree', () => {
       expect(traverse(root)).to.eql([1]);
     });
 
-    it('works with the simple tree', () => {
+    it("works with the simple tree", () => {
       expect(traverse(SAMPLE_TREE)).to.eql([1, 5, 3, 4, 0, 2, 7]);
     });
   });
 
-  describe('postOrder', () => {
+  describe("postOrder", () => {
     function traverse(root: IBinaryTreeNode<number> | null) {
       return new TestBinaryTree(root).postOrder();
     }
 
-    it('works with no elements', () => {
+    it("works with no elements", () => {
       expect(traverse(null)).to.eql([]);
     });
 
-    it('works with one element', () => {
+    it("works with one element", () => {
       const root: IBinaryTreeNode<number> = {
         left: null,
         right: null,
@@ -102,7 +102,7 @@ describe('BaseBinaryTree', () => {
       expect(traverse(root)).to.eql([1]);
     });
 
-    it('works with the simple tree', () => {
+    it("works with the simple tree", () => {
       expect(traverse(SAMPLE_TREE)).to.eql([3, 4, 5, 2, 7, 0, 1]);
     });
   });

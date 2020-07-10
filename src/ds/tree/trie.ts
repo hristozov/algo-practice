@@ -1,6 +1,6 @@
-import { merge, toArray } from '../../util';
+import { merge, toArray } from "../../util";
 
-import { IKVTree } from './tree';
+import { IKVTree } from "./tree";
 
 interface IListResult<T> {
   [key: string]: T;
@@ -9,19 +9,25 @@ interface IListResult<T> {
 export class Trie<T> implements IKVTree<string, T> {
   private readonly children: { [key: string]: Trie<T> } = {};
 
-  public constructor(private value: T | null = null) {
-  }
+  public constructor(private value: T | null = null) {}
 
   public add(key: string, value: T | null): Trie<T> {
-    function helper(current: Trie<T>,
-                    currentKey: string,
-                    parentKey: string | null,
-                    parent: Trie<T> | null) {
+    function helper(
+      current: Trie<T>,
+      currentKey: string,
+      parentKey: string | null,
+      parent: Trie<T> | null
+    ) {
       const children = current.children;
       if (!currentKey || currentKey.length === 0) {
         current.value = value;
 
-        if (!value && Object.keys(children).length === 0 && parent && parentKey) {
+        if (
+          !value &&
+          Object.keys(children).length === 0 &&
+          parent &&
+          parentKey
+        ) {
           // tslint:disable-next-line:no-dynamic-delete
           delete parent.children[parentKey];
         }
@@ -60,9 +66,11 @@ export class Trie<T> implements IKVTree<string, T> {
   }
 
   public list(): IListResult<T> {
-    function* helper(prefix: string,
-                     currentKey: string | null,
-                     current: Trie<T>): IterableIterator<IListResult<T>> {
+    function* helper(
+      prefix: string,
+      currentKey: string | null,
+      current: Trie<T>
+    ): IterableIterator<IListResult<T>> {
       if (current.value && currentKey) {
         const res: IListResult<T> = {};
         res[prefix] = current.value;
@@ -75,7 +83,6 @@ export class Trie<T> implements IKVTree<string, T> {
       }
     }
 
-    return toArray(helper('', null, this))
-      .reduce(merge, {});
+    return toArray(helper("", null, this)).reduce(merge, {});
   }
 }

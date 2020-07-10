@@ -1,6 +1,6 @@
-import { numericSort } from './numericSort.spec';
-import { TreeSort } from './treeSort';
+import { numericSort } from "./numericSort.spec";
+import { TreeSort } from "./treeSort";
 
-describe('TreeSort', () => {
+describe("TreeSort", () => {
   numericSort(TreeSort);
 });

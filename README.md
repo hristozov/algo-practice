@@ -11,4 +11,5 @@ This is done as a personal practice - a way to refresh my CS knowledge and to le
 Do not rely on the code here for serious stuff.
 
 ## But \<algorithm or data structure\> is (broken|slow|ugly)!
+
 If you care so much, please add an issue or a PR! 🤓

@@ -1,4 +1,4 @@
-import { Comparator, ISort } from './sort';
+import { Comparator, ISort } from "./sort";
 
 interface IPivotSelection<T> {
   pivot: T;
@@ -11,7 +11,7 @@ export class QuickSort<T> implements ISort<T> {
       return [];
     }
 
-    const {pivot, rest} = this.selectPivot(t);
+    const { pivot, rest } = this.selectPivot(t);
     const lt = rest.filter((x) => comparator(x, pivot) < 0);
     const gte = rest.filter((x) => comparator(x, pivot) >= 0);
 

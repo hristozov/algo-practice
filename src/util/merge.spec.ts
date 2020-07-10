@@ -1,13 +1,13 @@
-import { expect } from 'chai';
+import { expect } from "chai";
 
-import { merge } from './merge';
+import { merge } from "./merge";
 
 /* tslint:disable:no-any no-unused-expression no-inferred-empty-object-type */
 
-describe('range', () => {
-  it('merges two objects', () => {
-    const a: any = {foo: 1};
-    const b: any = {bar: 5};
+describe("range", () => {
+  it("merges two objects", () => {
+    const a: any = { foo: 1 };
+    const b: any = { bar: 5 };
 
     expect(merge(a, b)).to.eq(a);
 

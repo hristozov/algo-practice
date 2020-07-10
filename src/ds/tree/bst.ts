@@ -1,9 +1,10 @@
-import { Comparator } from '../../sort/sort';
+import { Comparator } from "../../sort/sort";
 
-import { BaseBinaryTree, ITraversibleBinaryTree } from './binaryTree';
-import { BinaryTreeNode, IBinaryTreeNode } from './binaryTreeNode';
+import { BaseBinaryTree, ITraversibleBinaryTree } from "./binaryTree";
+import { BinaryTreeNode, IBinaryTreeNode } from "./binaryTreeNode";
 
-export class BinarySearchTree<T> extends BaseBinaryTree<T> implements ITraversibleBinaryTree<T> {
+export class BinarySearchTree<T> extends BaseBinaryTree<T>
+  implements ITraversibleBinaryTree<T> {
   public constructor(private readonly comparator: Comparator<T>) {
     super();
   }
@@ -16,7 +17,10 @@ export class BinarySearchTree<T> extends BaseBinaryTree<T> implements ITraversib
     }
 
     const addToTree = (currentNode: IBinaryTreeNode<T>) => {
-      const comparisonResult: number = this.comparator(value, currentNode.value);
+      const comparisonResult: number = this.comparator(
+        value,
+        currentNode.value
+      );
       const left = currentNode.left;
       const right = currentNode.right;
 
@@ -65,8 +69,7 @@ export class BinarySearchTree<T> extends BaseBinaryTree<T> implements ITraversib
   }
 
   public descending(): T[] {
-    return this.inOrder()
-    .reverse();
+    return this.inOrder().reverse();
   }
 
   private isRoot(node: IBinaryTreeNode<T>) {
@@ -75,13 +78,18 @@ export class BinarySearchTree<T> extends BaseBinaryTree<T> implements ITraversib
   }
 
   private removeNode(node: IBinaryTreeNode<T>): BinarySearchTree<T> {
-    const findInOrderSuccessor = (current: IBinaryTreeNode<T>): IBinaryTreeNode<T> => {
+    const findInOrderSuccessor = (
+      current: IBinaryTreeNode<T>
+    ): IBinaryTreeNode<T> => {
       const leftSuccessor = current.left;
 
       return leftSuccessor ? findInOrderSuccessor(leftSuccessor) : current;
     };
 
-    const replace = (target: IBinaryTreeNode<T>, replacement: IBinaryTreeNode<T> | null) => {
+    const replace = (
+      target: IBinaryTreeNode<T>,
+      replacement: IBinaryTreeNode<T> | null
+    ) => {
       const parent = target.parent;
       if (this.isRoot(node) || !parent) {
         this.root = replacement;
@@ -115,12 +123,17 @@ export class BinarySearchTree<T> extends BaseBinaryTree<T> implements ITraversib
   }
 
   private findNode(value: T): IBinaryTreeNode<T> | null {
-    const traverse = (currentNode: IBinaryTreeNode<T> | null): IBinaryTreeNode<T> | null => {
+    const traverse = (
+      currentNode: IBinaryTreeNode<T> | null
+    ): IBinaryTreeNode<T> | null => {
       if (!currentNode) {
         return null;
       }
 
-      const comparisonResult: number = this.comparator(value, currentNode.value);
+      const comparisonResult: number = this.comparator(
+        value,
+        currentNode.value
+      );
 
       if (comparisonResult === 0) {
         return currentNode;

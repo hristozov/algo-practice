@@ -1,4 +1,4 @@
-import { range } from '../util';
+import { range } from "../util";
 
 /**
  * LSD radix sort implementation.
@@ -34,12 +34,15 @@ export class RadixSort {
 
       currentList.forEach((element) => {
         // Find the target bucket and add the element there.
-        const bucketIdx = Math.floor(element / (base ** currentDigitIdx)) % base;
+        const bucketIdx = Math.floor(element / base ** currentDigitIdx) % base;
         buckets[bucketIdx].push(element);
       });
 
       // Now, join the buckets for the current iteration.
-      currentList = buckets.reduce((result, bucket) => result.concat(bucket), []);
+      currentList = buckets.reduce(
+        (result, bucket) => result.concat(bucket),
+        []
+      );
 
       currentDigitIdx += 1;
     }

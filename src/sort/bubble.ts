@@ -1,6 +1,6 @@
-import { cloneArray, range } from '../util';
+import { cloneArray, range } from "../util";
 
-import { Comparator, ISort } from './sort';
+import { Comparator, ISort } from "./sort";
 
 export class QuickSort<T> implements ISort<T> {
   public sort(t: T[], comparator: Comparator<T>): T[] {

@@ -1,6 +1,6 @@
-import { HeapSort } from './heapSort';
-import { numericSort } from './numericSort.spec';
+import { HeapSort } from "./heapSort";
+import { numericSort } from "./numericSort.spec";
 
-describe('HeapSort', () => {
+describe("HeapSort", () => {
   numericSort(HeapSort);
 });

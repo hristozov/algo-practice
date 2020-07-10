@@ -1,4 +1,4 @@
-import { range, toArray } from '../util';
+import { range, toArray } from "../util";
 
 type BooleanExpression = (...args: boolean[]) => boolean;
 
@@ -26,23 +26,22 @@ export class DisjunctiveNormalForm {
   }
 
   private toConjunction(row: boolean[]): string {
-    const symbols = toArray(range(0, row.length))
-      .map((i: number) => {
-        const symbol = this.symbols[i];
+    const symbols = toArray(range(0, row.length)).map((i: number) => {
+      const symbol = this.symbols[i];
 
-        return row[i] ? symbol : `!${symbol}`;
-      });
+      return row[i] ? symbol : `!${symbol}`;
+    });
     if (symbols.length > 1) {
-      return `(${symbols.join('&&')})`;
+      return `(${symbols.join("&&")})`;
     } else {
-      return symbols.join('');
+      return symbols.join("");
     }
   }
 
   private pad(binary: string, length: number) {
     const diff = length - binary.length;
 
-    return diff > 0 ? '0'.repeat(diff) + binary : binary;
+    return diff > 0 ? "0".repeat(diff) + binary : binary;
   }
 
   private optimizeMap(map: boolean[][]): boolean[][] {
@@ -50,7 +49,7 @@ export class DisjunctiveNormalForm {
   }
 
   private constructDisjunction(expressions: string[]) {
-    return expressions.join('||');
+    return expressions.join("||");
   }
 
   private constructMap(): boolean[][] {
@@ -60,7 +59,8 @@ export class DisjunctiveNormalForm {
 
     return indexes.map((index: number) =>
       this.pad(index.toString(2), numOfSymbols)
-        .split('')
-        .map((bit: string) => bit === '1'));
+        .split("")
+        .map((bit: string) => bit === "1")
+    );
   }
 }

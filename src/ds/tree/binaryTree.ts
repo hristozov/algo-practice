@@ -1,7 +1,7 @@
-import { toArray } from '../../util';
+import { toArray } from "../../util";
 
-import { IBinaryTreeNode } from './binaryTreeNode';
-import { ITree } from './tree';
+import { IBinaryTreeNode } from "./binaryTreeNode";
+import { ITree } from "./tree";
 
 export interface ITraversibleBinaryTree<T> extends ITree<T> {
   preOrder(): T[];
@@ -12,14 +12,16 @@ export interface ITraversibleBinaryTree<T> extends ITree<T> {
 }
 
 type Visit<T> = (current: IBinaryTreeNode<T> | null) => IterableIterator<T>;
-type TraversalGenerator<T> = (current: IBinaryTreeNode<T>,
-                              visitor: Visit<T>) => IterableIterator<T>;
+type TraversalGenerator<T> = (
+  current: IBinaryTreeNode<T>,
+  visitor: Visit<T>
+) => IterableIterator<T>;
 
 export abstract class BaseBinaryTree<T> {
   protected root: IBinaryTreeNode<T> | null = null;
 
   public preOrder(): T[] {
-    return this.doTraversal(function*(current, visitor) {
+    return this.doTraversal(function* (current, visitor) {
       yield current.value;
       yield* visitor(current.left);
       yield* visitor(current.right);
@@ -27,7 +29,7 @@ export abstract class BaseBinaryTree<T> {
   }
 
   public inOrder() {
-    return this.doTraversal(function*(current, visitor) {
+    return this.doTraversal(function* (current, visitor) {
       yield* visitor(current.left);
       yield current.value;
       yield* visitor(current.right);
@@ -35,7 +37,7 @@ export abstract class BaseBinaryTree<T> {
   }
 
   public postOrder() {
-    return this.doTraversal(function*(current, visitor) {
+    return this.doTraversal(function* (current, visitor) {
       yield* visitor(current.left);
       yield* visitor(current.right);
       yield current.value;
@@ -43,7 +45,7 @@ export abstract class BaseBinaryTree<T> {
   }
 
   private doTraversal(generator: TraversalGenerator<T>) {
-    const visitor: Visit<T> = function*(current) {
+    const visitor: Visit<T> = function* (current) {
       if (!current) {
         // tslint:disable-next-line:return-undefined
         return;
