@@ -1,6 +1,6 @@
-import { MergeSort } from "./mergeSort";
-import { numericSort } from "./numericSort.spec";
+import { MergeSort } from './mergeSort';
+import { numericSort } from './numericSort.spec';
 
-describe("MergeSort", () => {
+describe('MergeSort', () => {
   numericSort(MergeSort);
 });

@@ -1,16 +1,16 @@
-import { expect } from "chai";
+import { expect } from 'chai';
 
-import { BinaryTreeNode } from "./binaryTreeNode";
+import { BinaryTreeNode } from './binaryTreeNode';
 
-describe("BinaryTreeNode", () => {
-  describe("#isLead", () => {
-    it("is true for a node with no children", () => {
+describe('BinaryTreeNode', () => {
+  describe('#isLead', () => {
+    it('is true for a node with no children', () => {
       const node = new BinaryTreeNode(1);
 
       expect(node.isLeaf()).to.eq(true);
     });
 
-    it("is false for a node with a left", () => {
+    it('is false for a node with a left', () => {
       const otherNode = new BinaryTreeNode(1);
       const node = new BinaryTreeNode(2);
 
@@ -19,7 +19,7 @@ describe("BinaryTreeNode", () => {
       expect(node.isLeaf()).to.eq(false);
     });
 
-    it("is false for a node with a right", () => {
+    it('is false for a node with a right', () => {
       const otherNode = new BinaryTreeNode(1);
       const node = new BinaryTreeNode(2);
 
@@ -28,7 +28,7 @@ describe("BinaryTreeNode", () => {
       expect(node.isLeaf()).to.eq(false);
     });
 
-    it("is true for a node with both left and right", () => {
+    it('is true for a node with both left and right', () => {
       const left = new BinaryTreeNode(1);
       const right = new BinaryTreeNode(2);
       const node = new BinaryTreeNode(3);

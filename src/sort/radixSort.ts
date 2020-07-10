@@ -1,4 +1,4 @@
-import { range } from "../util";
+import { range } from '../util';
 
 /**
  * LSD radix sort implementation.
@@ -41,7 +41,7 @@ export class RadixSort {
       // Now, join the buckets for the current iteration.
       currentList = buckets.reduce(
         (result, bucket) => result.concat(bucket),
-        []
+        [],
       );
 
       currentDigitIdx += 1;

@@ -1,7 +1,7 @@
-import { toArray } from "../../util";
+import { toArray } from '../../util';
 
-import { IBinaryTreeNode } from "./binaryTreeNode";
-import { ITree } from "./tree";
+import { IBinaryTreeNode } from './binaryTreeNode';
+import { ITree } from './tree';
 
 export interface ITraversibleBinaryTree<T> extends ITree<T> {
   preOrder(): T[];
@@ -14,7 +14,7 @@ export interface ITraversibleBinaryTree<T> extends ITree<T> {
 type Visit<T> = (current: IBinaryTreeNode<T> | null) => IterableIterator<T>;
 type TraversalGenerator<T> = (
   current: IBinaryTreeNode<T>,
-  visitor: Visit<T>
+  visitor: Visit<T>,
 ) => IterableIterator<T>;
 
 export abstract class BaseBinaryTree<T> {

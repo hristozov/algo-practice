@@ -1,4 +1,4 @@
-import { ITreeNode } from "./treeNode";
+import { ITreeNode } from './treeNode';
 
 export interface IBinaryTreeNode<T> extends ITreeNode<T> {
   left: IBinaryTreeNode<T> | null;
@@ -12,7 +12,7 @@ export class BinaryTreeNode<T> implements IBinaryTreeNode<T> {
 
   public constructor(
     public value: T,
-    public parent: IBinaryTreeNode<T> | null = null
+    public parent: IBinaryTreeNode<T> | null = null,
   ) {
     this.value = value;
   }

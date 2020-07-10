@@ -1,4 +1,4 @@
-import { ITree } from "./tree";
+import { ITree } from './tree';
 
 export class BinaryHeap<T> implements ITree<T> {
   private tree: T[] = [];

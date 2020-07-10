@@ -1,6 +1,6 @@
-import { numericSort } from "./numericSort.spec";
-import { QuickSort } from "./quickSort";
+import { numericSort } from './numericSort.spec';
+import { QuickSort } from './quickSort';
 
-describe("QuickSort", () => {
+describe('QuickSort', () => {
   numericSort(QuickSort);
 });

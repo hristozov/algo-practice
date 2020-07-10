@@ -1,4 +1,4 @@
-import { Comparator, ISort } from "./sort";
+import { Comparator, ISort } from './sort';
 
 interface IPivotSelection<T> {
   pivot: T;

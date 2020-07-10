@@ -27,7 +27,8 @@
     "quotemark": [true, "single"],
     "strict-boolean-expressions": false,
     "typedef": false,
-    "unnecessary-else": false
+    "unnecessary-else": false,
+    "space-before-function-paren": false
   },
   "rulesDirectory": []
 }

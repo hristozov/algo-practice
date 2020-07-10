@@ -1,4 +1,4 @@
-import { Comparator, ISort } from "./sort";
+import { Comparator, ISort } from './sort';
 
 export class MergeSort<T> implements ISort<T> {
   public sort(t: T[], comparator: Comparator<T>): T[] {

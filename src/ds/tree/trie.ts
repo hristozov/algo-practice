@@ -1,6 +1,6 @@
-import { merge, toArray } from "../../util";
+import { merge, toArray } from '../../util';
 
-import { IKVTree } from "./tree";
+import { IKVTree } from './tree';
 
 interface IListResult<T> {
   [key: string]: T;
@@ -16,7 +16,7 @@ export class Trie<T> implements IKVTree<string, T> {
       current: Trie<T>,
       currentKey: string,
       parentKey: string | null,
-      parent: Trie<T> | null
+      parent: Trie<T> | null,
     ) {
       const children = current.children;
       if (!currentKey || currentKey.length === 0) {
@@ -69,7 +69,7 @@ export class Trie<T> implements IKVTree<string, T> {
     function* helper(
       prefix: string,
       currentKey: string | null,
-      current: Trie<T>
+      current: Trie<T>,
     ): IterableIterator<IListResult<T>> {
       if (current.value && currentKey) {
         const res: IListResult<T> = {};
@@ -83,6 +83,6 @@ export class Trie<T> implements IKVTree<string, T> {
       }
     }
 
-    return toArray(helper("", null, this)).reduce(merge, {});
+    return toArray(helper('', null, this)).reduce(merge, {});
   }
 }

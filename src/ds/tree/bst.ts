@@ -1,7 +1,7 @@
-import { Comparator } from "../../sort/sort";
+import { Comparator } from '../../sort/sort';
 
-import { BaseBinaryTree, ITraversibleBinaryTree } from "./binaryTree";
-import { BinaryTreeNode, IBinaryTreeNode } from "./binaryTreeNode";
+import { BaseBinaryTree, ITraversibleBinaryTree } from './binaryTree';
+import { BinaryTreeNode, IBinaryTreeNode } from './binaryTreeNode';
 
 export class BinarySearchTree<T> extends BaseBinaryTree<T>
   implements ITraversibleBinaryTree<T> {
@@ -19,7 +19,7 @@ export class BinarySearchTree<T> extends BaseBinaryTree<T>
     const addToTree = (currentNode: IBinaryTreeNode<T>) => {
       const comparisonResult: number = this.comparator(
         value,
-        currentNode.value
+        currentNode.value,
       );
       const left = currentNode.left;
       const right = currentNode.right;
@@ -79,7 +79,7 @@ export class BinarySearchTree<T> extends BaseBinaryTree<T>
 
   private removeNode(node: IBinaryTreeNode<T>): BinarySearchTree<T> {
     const findInOrderSuccessor = (
-      current: IBinaryTreeNode<T>
+      current: IBinaryTreeNode<T>,
     ): IBinaryTreeNode<T> => {
       const leftSuccessor = current.left;
 
@@ -88,7 +88,7 @@ export class BinarySearchTree<T> extends BaseBinaryTree<T>
 
     const replace = (
       target: IBinaryTreeNode<T>,
-      replacement: IBinaryTreeNode<T> | null
+      replacement: IBinaryTreeNode<T> | null,
     ) => {
       const parent = target.parent;
       if (this.isRoot(node) || !parent) {
@@ -124,7 +124,7 @@ export class BinarySearchTree<T> extends BaseBinaryTree<T>
 
   private findNode(value: T): IBinaryTreeNode<T> | null {
     const traverse = (
-      currentNode: IBinaryTreeNode<T> | null
+      currentNode: IBinaryTreeNode<T> | null,
     ): IBinaryTreeNode<T> | null => {
       if (!currentNode) {
         return null;
@@ -132,7 +132,7 @@ export class BinarySearchTree<T> extends BaseBinaryTree<T>
 
       const comparisonResult: number = this.comparator(
         value,
-        currentNode.value
+        currentNode.value,
       );
 
       if (comparisonResult === 0) {
