@@ -1,4 +1,5 @@
 import { expect } from 'chai';
+
 import { merge } from './merge';
 
 /* tslint:disable:no-any no-unused-expression no-inferred-empty-object-type */

@@ -1,4 +1,5 @@
 import { cloneArray, range } from '../util';
+
 import { Comparator, ISort } from './sort';
 
 export class QuickSort<T> implements ISort<T> {

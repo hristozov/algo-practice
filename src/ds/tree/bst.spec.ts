@@ -1,4 +1,5 @@
 import { expect } from 'chai';
+
 import { BinarySearchTree } from './bst';
 
 /* tslint:disable:no-unused-expression */

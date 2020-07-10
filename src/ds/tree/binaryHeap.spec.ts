@@ -1,4 +1,5 @@
 import { expect } from 'chai';
+
 import { BinaryHeap } from './binaryHeap';
 
 /* tslint:disable:no-unused-expression */

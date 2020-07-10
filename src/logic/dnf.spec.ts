@@ -1,4 +1,5 @@
 import { expect } from 'chai';
+
 import { DisjunctiveNormalForm } from './dnf';
 
 describe('DisjunctiveNormalForm', () => {

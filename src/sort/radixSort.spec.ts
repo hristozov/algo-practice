@@ -1,4 +1,5 @@
 import { expect } from 'chai';
+
 import { RadixSort } from './radixSort';
 
 /* tslint:disable:no-unused-expression */

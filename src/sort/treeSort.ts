@@ -1,4 +1,5 @@
 import { BinarySearchTree } from '../ds/tree/bst';
+
 import { Comparator, ISort } from './sort';
 
 export class TreeSort<T> implements ISort<T> {

@@ -1,4 +1,5 @@
 import { expect } from 'chai';
+
 import { range } from './range';
 import { toArray } from './toArray';
 

@@ -1,4 +1,5 @@
 import { Comparator } from '../../sort/sort';
+
 import { BaseBinaryTree, ITraversibleBinaryTree } from './binaryTree';
 import { BinaryTreeNode, IBinaryTreeNode } from './binaryTreeNode';
 
@@ -69,6 +70,7 @@ export class BinarySearchTree<T> extends BaseBinaryTree<T> implements ITraversib
   }
 
   private isRoot(node: IBinaryTreeNode<T>) {
+    // tslint:disable-next-line:strict-comparisons
     return this.root === node;
   }
 
@@ -88,6 +90,7 @@ export class BinarySearchTree<T> extends BaseBinaryTree<T> implements ITraversib
           replacement.parent = null;
         }
       } else {
+        // tslint:disable-next-line:strict-comparisons
         if (parent.left === node) {
           parent.left = replacement;
         } else {

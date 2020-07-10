@@ -1,4 +1,5 @@
 import { toArray } from '../../util';
+
 import { IBinaryTreeNode } from './binaryTreeNode';
 import { ITree } from './tree';
 

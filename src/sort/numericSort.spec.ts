@@ -1,4 +1,5 @@
 import { expect } from 'chai';
+
 import { ISort } from './sort';
 
 /* tslint:disable:no-unused-expression */

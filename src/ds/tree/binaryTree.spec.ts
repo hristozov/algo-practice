@@ -1,4 +1,5 @@
 import { expect } from 'chai';
+
 import { BaseBinaryTree } from './binaryTree';
 import { IBinaryTreeNode } from './binaryTreeNode';
 

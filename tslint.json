@@ -21,7 +21,8 @@
     "prefer-function-over-method": false,
     "quotemark": [true, "single"],
     "strict-boolean-expressions": false,
-    "typedef": false
+    "typedef": false,
+    "unnecessary-else": false
   },
   "rulesDirectory": []
 }

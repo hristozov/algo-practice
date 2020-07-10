@@ -1,4 +1,5 @@
 import { expect } from 'chai';
+
 import { Trie } from './trie';
 
 /* tslint:disable:no-inferred-empty-object-type */

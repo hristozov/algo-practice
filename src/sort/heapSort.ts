@@ -1,4 +1,5 @@
 import { BinaryHeap } from '../ds/tree/binaryHeap';
+
 import { Comparator, ISort } from './sort';
 
 export class HeapSort<T> implements ISort<T> {
