@@ -21,7 +21,9 @@
     "strict-boolean-expressions": false,
     "typedef": false,
     "unnecessary-else": false,
-    "space-before-function-paren": false
+    "space-before-function-paren": false,
+    "number-literal-format": false,
+    "comment-format": [true, { "ignore-pattern": "prettier" }]
   },
   "rulesDirectory": []
 }
