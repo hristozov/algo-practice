@@ -9,7 +9,10 @@ import { ISort } from './sort';
  *
  * @param klass The target class to generate test cases for.
  */
-export function numericSort(klass: new () => ISort<number>) {
+export function numericSort(
+  klass: new () => ISort<number>,
+  includeComparators = true,
+) {
   function ascComparator(t1: number, t2: number) {
     if (t1 > t2) {
       return 1;
@@ -56,17 +59,13 @@ export function numericSort(klass: new () => ISort<number>) {
     ]);
   });
 
-  it('sorts basic numeric arrays in descending order', () => {
-    expect(sorter.sort([1, 7, -5, 4, 0, 9, 2], descComparator)).to.deep.equal([
-      9,
-      7,
-      4,
-      2,
-      1,
-      0,
-      -5,
-    ]);
-  });
+  if (includeComparators) {
+    it('sorts basic numeric arrays in descending order', () => {
+      expect(
+        sorter.sort([1, 7, -5, 4, 0, 9, 2], descComparator),
+      ).to.deep.equal([9, 7, 4, 2, 1, 0, -5]);
+    });
+  }
 
   it('sorts a list of 100 numbers', () => {
     expect(

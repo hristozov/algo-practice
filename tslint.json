@@ -3,14 +3,7 @@
   "extends": ["tslint:all"],
   "jsRules": {},
   "rules": {
-    "align": [
-      true,
-      "parameters",
-      "statements",
-      "arguments",
-      "members",
-      "elements"
-    ],
+    "align": false,
     "completed-docs": false,
     "cyclomatic-complexity": [true, 10],
     "max-line-length": [true, 100],
