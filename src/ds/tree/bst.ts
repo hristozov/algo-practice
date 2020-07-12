@@ -5,8 +5,16 @@ import { BinaryTreeNode, IBinaryTreeNode } from './binaryTreeNode';
 
 export class BinarySearchTree<T> extends BaseBinaryTree<T>
   implements ITraversibleBinaryTree<T> {
+  private dupsAllowed = false;
+
   public constructor(private readonly comparator: Comparator<T>) {
     super();
+  }
+
+  public allowDuplicates(): BinarySearchTree<T> {
+    this.dupsAllowed = true;
+
+    return this;
   }
 
   public add(value: T): BinarySearchTree<T> {
@@ -24,7 +32,7 @@ export class BinarySearchTree<T> extends BaseBinaryTree<T>
       const left = currentNode.left;
       const right = currentNode.right;
 
-      if (comparisonResult === 0) {
+      if (comparisonResult === 0 && !this.dupsAllowed) {
         // The value is already in the tree.
         return;
       }
