@@ -4,6 +4,7 @@
     "target": "ESNext",
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2016"],
+    "moduleResolution": "node",
     "strictNullChecks": true,
     "noImplicitAny": true
   }
