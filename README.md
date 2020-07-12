@@ -6,7 +6,7 @@ Sample implementations of algorithms and data structures.
 
 This is done as a personal practice - a way to refresh my CS knowledge and to learn TypeScript.
 
-Do not rely on the code here for serious stuff.
+The code here is stupid, insufficiently tested and slow. Do not rely on it for serious stuff.
 
 ## But \<algorithm or data structure\> is (broken|slow|ugly)!
 
