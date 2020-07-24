@@ -7,7 +7,7 @@
   "author": "Georgi Hristozov <georgi@forkbomb.nl>",
   "license": "Unlicense",
   "devDependencies": {
-    "@types/chai": "4.2.11",
+    "@types/chai": "4.2.12",
     "@types/mocha": "8.0.0",
     "@types/node": "14.0.26",
     "chai": "4.2.0",
