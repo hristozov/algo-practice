@@ -3,7 +3,8 @@ import { Comparator } from '../../sort/sort';
 import { BaseBinaryTree, ITraversibleBinaryTree } from './binaryTree';
 import { BinaryTreeNode, IBinaryTreeNode } from './binaryTreeNode';
 
-export class BinarySearchTree<T> extends BaseBinaryTree<T>
+export class BinarySearchTree<T>
+  extends BaseBinaryTree<T>
   implements ITraversibleBinaryTree<T> {
   private dupsAllowed = false;
 
